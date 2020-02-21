@@ -1,3 +1,7 @@
-# Close Discarded Tabs
+# Close discarded tabs
 
-Closes discarded tabs in the current browser window
+Close discarded tabs in the current browser window
+
+![Screenshot](screenshot.png)
+
+[Firefox addon](https://addons.mozilla.org/en-US/firefox/addon/close-discarded-tabs/)
