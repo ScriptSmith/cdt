@@ -9,7 +9,7 @@ browser.storage.local
 
 browser.browserAction.onClicked.addListener(() =>
   browser.tabs
-    .query({ currentWindow: true, discarded: undefined, pinned })
+    .query({ currentWindow: true, discarded: true, pinned })
     .then((tabs) => tabs.map((tab) => browser.tabs.remove(tab.id))),
 );
 
