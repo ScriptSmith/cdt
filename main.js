@@ -16,7 +16,7 @@ browser.browserAction.onClicked.addListener(() =>
 const setIcon = (color) =>
   browser.browserAction.setIcon({
     path: {
-      48: `icons/trash-48-${color}.png`,
+      48: `icons/trash-48-${color ?? DEFAULT_COLOR}.png`,
     },
   });
 
