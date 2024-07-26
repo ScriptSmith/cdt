@@ -3,7 +3,12 @@ const DEFAULT_COLOR = "dark";
 const iconInput = document.querySelector("#iconColor");
 browser.storage.local
   .get("iconColor")
-  .then(({ iconColor }) => (iconInput.value = iconColor ?? DEFAULT_COLOR));
+  .then(({ iconColor }) => {
+    if (iconColor !== "dark" && iconColor !== "light") {
+      return;
+    }
+    iconInput.value = iconColor ?? DEFAULT_COLOR;
+  });
 iconInput.onchange = (e) =>
   browser.storage.local.set({ iconColor: e.target.value });
 

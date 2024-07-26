@@ -13,12 +13,16 @@ browser.browserAction.onClicked.addListener(() =>
     .then((tabs) => tabs.map((tab) => browser.tabs.remove(tab.id))),
 );
 
-const setIcon = (color) =>
+const setIcon = (color) => {
+  if (color !== "dark" && color !== "light") {
+    return;
+  }
   browser.browserAction.setIcon({
     path: {
       48: `icons/trash-48-${color ?? DEFAULT_COLOR}.png`,
     },
   });
+}
 
 browser.storage.local
   .get("iconColor")
